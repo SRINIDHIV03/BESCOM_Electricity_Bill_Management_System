@@ -17,7 +17,7 @@ const loginBtn = document.querySelector('#login-button');
 
 
 function submitForm(){
-    var username = document.getElementById("username").value;
+    var username = document.getElementById("adminid").value;
     var password = document.getElementById("password").value;
     fetch('http://localhost:5000/checkInUser', {
         headers: {
@@ -42,7 +42,7 @@ function loadNewPage(truth) {
     console.log("In submitForm");
     if (truth) {
         document.getElementById("loginMessage").innerHTML = "Login successful!";
-        window.location.href = '../User_MainPage/index.html';
+        window.location.href = '../../Home Page/index.html';
     } 
     else {
         document.getElementById("loginMessage").innerHTML = "Invalid username or password.";

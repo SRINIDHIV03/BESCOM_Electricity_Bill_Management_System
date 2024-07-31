@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill Table Example</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            /* padding: 8px; */
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .slab-table {
+            width: 100%;
+        }
+
+        .slab-table th, .slab-table td {
+            border: 1px solid #ddd;
+            /* padding: 5px; */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table id="customers">
+        <thead>
+            <tr>
+                <th rowspan='2' colspan="1">Tariff ID</th>
+                <th rowspan='2' colspan="1">Tariff Name</th>
+                <th rowspan='1' colspan="3">Slab</th>
+                <th rowspan='2' colspan="1">FPPCA</th>
+                <th rowspan='2' colspan="1">Energy Rate</th>
+            </tr>
+            <tr id="sub-table">
+                <th rowspan='1' colspan="1">Lower Limit</th>
+                <th rowspan='1' colspan="1">Upper Limit</th>
+                <th rowspan='1' colspan="1">Charge</th>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+
+    <script>
+        // Sample data to populate the table
+        var data = [
+            { tariffID: 'T001', tariffName: 'Residential', slabs: [{ lowerLimit: 0, upperLimit: 100, charge: 5 }, { lowerLimit: 101, upperLimit: 200, charge: 8 }], fppca: 0.03, energyRate: 0.1 },
+            { tariffID: 'T002', tariffName: 'Commercial', slabs: [{ lowerLimit: 0, upperLimit: 200, charge: 8 }, { lowerLimit: 201, upperLimit: 300, charge: 10 }], fppca: 0.02, energyRate: 0.15 },
+            { tariffID: 'T002', tariffName: 'Commercial', slabs: [{ lowerLimit: 0, upperLimit: 200, charge: 8 }, { lowerLimit: 201, upperLimit: 300, charge: 10 }], fppca: 0.02, energyRate: 0.15 },
+            // Add more data entries as needed
+        ];
+
+        // Function to fill the table
+
+        function fillTable() {
+            var tbody = document.getElementById('table-body');
+
+            // Loop through the data and create rows and cells
+            for (var i = 0; i < data.length; i++) {
+                var row = tbody.insertRow(i);
+
+                var cell1 = row.insertCell(0);
+                cell1.innerHTML = data[i].tariffID;
+
+                var cell2 = row.insertCell(1);
+                cell2.innerHTML = data[i].tariffName;
+
+                // Create a cell for slabs
+                var cell3 = row.insertCell(2);
+                cell3.colSpan = 3;
+
+                // Create a nested table for slabs
+                var slabTable = document.createElement('table');
+                slabTable.classList.add('slab-table');
+                
+                var slabHeaderRow = slabTable.insertRow(0);
+                var slabHeaders = ['Lower Limit', 'Upper Limit', 'Charge'];
+
+               /* for (var j = 0; j < slabHeaders.length; j++) {
+                    var headerCell = slabHeaderRow.insertCell(j);
+                    headerCell.innerHTML = slabHeaders[j];
+                }*/
+                var k=0;
+                for (k = 0; k < data[i].slabs.length; k++) {
+                    var slabRow = slabTable.insertRow(k + 1);
+
+                    var slabCell1 = slabRow.insertCell(0);
+                    slabCell1.innerHTML = data[i].slabs[k].lowerLimit;
+                    slabCell1.colSpan=1;
+                    
+                    var slabCell2 = slabRow.insertCell(1);
+                    slabCell2.innerHTML = data[i].slabs[k].upperLimit;
+                    slabCell2.colSpan=2;
+
+                    var slabCell3 = slabRow.insertCell(2);
+                    slabCell3.innerHTML = data[i].slabs[k].charge;
+                    slabCell3.colSpan=1;
+                }
+    
+//                cell3.append
+                cell3.appendChild(slabTable);
+                var table2 = document.createElement('table');
+                table2.classList.add('slab-table');
+                
+                var slabRow = table2.insertRow(0);
+                var slabCell1 = slabRow.insertCell(0);
+                    slabCell1.innerHTML = 2000;
+                    slabCell1.colSpan=2;
+                    
+                    var slabCell3 = slabRow.insertCell(1);
+                    slabCell3.innerHTML = 10;
+                    slabCell3.colSpan=1;
+                    cell3.appendChild(table2);
+                
+
+                var cell4 = row.insertCell(3);
+                cell4.innerHTML = data[i].fppca;
+
+                var cell5 = row.insertCell(4);
+                cell5.innerHTML = data[i].energyRate;
+            }
+        }
+
+        // Call the fillTable function when the page is loaded
+        window.onload = fillTable;
+    </script>
+</body>
+</html>

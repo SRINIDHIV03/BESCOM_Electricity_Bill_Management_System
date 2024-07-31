@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./login.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;700&display=swap"
+    />
+    <title>User | Login</title>
+  </head>
+  <body>
+    <div class="login" id="container">
+      <div class="form" id="formdiv" data-animate-on-scroll>
+        <form class="form1" id="loginform">
+          <div class="button" id="submitdiv">
+            <button class="button1" id="submitbutton" type="submit">
+              <b class="button2" id="login">Login</b>
+            </button>
+          </div>
+          <div class="password1" id="passworddiv">
+            <label class="password2" htmlfor="password" type="password"
+              >Password *</label
+            >
+            <input
+              class="large-input"
+              name="password"
+              id="password"
+              placeholder="Enter Password"
+              type="password"
+              required 
+            />
+
+            <div class="remove-red-eye" id="passwordvisiblediv"></div>
+          </div>
+          <div class="email4" id="adminiddiv">
+            <label class="admin-id" htmlfor="adminid">
+              <span class="admin-id1">Account ID</span>
+              <span class="span">*</span>
+            </label>
+            <input
+              class="large-input1"
+              name="adminid"
+              id="adminid"
+              placeholder="Enter Account ID"
+              type="number" maxlength="10" minlength="12" required autofocus 
+            />
+          </div>
+        </form>
+        <div class="header" id="headingdiv">
+          <b class="title" id="heading">User Login</b>
+          <b class="please-login-only" id="info"
+            >Contact Administrator if not Registered</b
+          >
+          
+        </div>
+      </div>
+      <div class="image" id="imagecont">       
+
+        <div class="logo1" id="bescomdiv">
+          <div class="text2" id="textdiv">
+            <b class="bescom" id="bescom">BESCOM</b>
+          </div>
+        </div>
+        <img class="pngtreebulb-icon-vector-bulb1" alt="" src="./bulb.png" />
+      </div>
+    </div>
+
+    <script>
+      var button = document.getElementById("submitdiv");
+      if (button) {
+        button.addEventListener("click", function (e) {
+          e.preventDefault();
+          submitForm();
+
+        });
+      }
+      var scrollAnimElements = document.querySelectorAll(
+        "[data-animate-on-scroll]"
+      );
+      var observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+              const targetElement = entry.target;
+              targetElement.classList.add("animate");
+              observer.unobserve(targetElement);
+            }
+          }
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+      for (let i = 0; i < scrollAnimElements.length; i++) {
+        observer.observe(scrollAnimElements[i]);
+      }
+      
+function submitForm(){
+
+console.log("Submitting...");
+//    var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+var acc_id = document.getElementById("adminid").value;
+console.log(acc_id+password);
+fetch('http://localhost:5000/checkInUser', {
+    headers: {
+        'Content-type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify({pass: password, ACCID:acc_id })
+})
+.then(response => response.json())
+.then(data => getTruth(data['data']))
+.then(x => loginPage(x))
+.catch(error => console.error('Error:', error));
+}
+
+function getTruth(data){  //returns true if 1 has been returned, else returns 0
+console.log("Getting truth");
+let val = data;
+console.log("Val:"+val);
+//    return val===1?true:false;
+return val;
+}
+
+function loginPage(truth) {
+console.log("In submitForm"+truth);
+//console.log(truth);
+if (truth) {
+    var acc_id = document.getElementById("adminid").value;
+    localStorage.setItem('ACCID', acc_id);
+    loadNewPage();
+    
+} 
+else {
+    console.log("Invalid login");
+    alert("Invalid ID or Password!!!");
+    document.getElementById('loginform').reset();
+    }
+}
+
+function loadNewPage(){
+window.location.href = '../Profilepage/index.html';
+}
+
+function Hello(){
+console.log("Hello");
+}
+      </script>
+    <!-- </script src="script.js"></script> -->
+  </body>
+</html>

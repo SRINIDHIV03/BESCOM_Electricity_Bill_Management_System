@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User | View Bill</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav class="head">
+          <div class="lefthead">
+            <img src="../../bescom.jpg" alt="" srcset="" />
+            BESCOM
+          </div>
+          <div class="righthead">
+            <ul>
+              <li><a href="../Profilepage/index.html">Profile</a></li>
+              <li><a href="#">View Bill</a></li>
+              <li><a onclick=Logout()>Logout</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="main">
+        <p class="heading">Most Recent Bill</p>
+      </div>
+      <div class="olderbills">
+        <a target="_blank" onclick=loadOldbill()>View Older Bills</a>
+      </div>
+      <div class="bill">
+        <div class="mainright">
+          <img src="../../bulb.png" alt="" />
+        </div>
+
+        <div class="payment">
+          <div class="mainleft">
+            <!-- <p id="AccId">Account ID: </p>
+            <p id="BillId">Bill ID: </p>
+            <p id="issuedDate">Issued On: </p>
+            <p id="dueDate">Due Date: </p>
+            <p id="prevRead">Previous Reading: </p>
+            <p id="presRead">Current Reading: </p>
+            <p id="Fixed">Fixed Charges: </p>
+            <p id="FPPCA">FPPCA Charges: </p>
+            <p id="Energy">Energy Charges: </p>
+            <p id="bill">Billable amount: </p>
+            <p id="Credit">Credit: </p>
+            <p id="Interest">Interest: </p>
+            <p id="Total">Payable Amount: </p>
+            <p id="Paid">Payment Status: </p> -->
+            <label for="AccId">Account ID     :</label>
+            <input id="AccId" class="inputclass" readonly/><br>
+
+            <label for="BillId">Bill ID       : </label>
+            <input id="BillId" class="inputclass" readonly/><br>
+
+            <label for="issuedDate">Issued On : </label>
+            <input id="issuedDate" class="inputclass" readonly/><br>
+
+            <label for="dueDate">Due Date : </label>
+            <input id="dueDate" class="inputclass" readonly/><br>
+
+            <label for="prevRead">Previous Reading : </label>
+            <input id="prevRead" class="inputclass" readonly/><br>
+
+            <label for="presRead">Current Reading : </label>
+            <input id="presRead" class="inputclass" readonly/><br>
+
+            <label for="Fixed">Fixed Charges : </label>
+            <input id="Fixed" class="inputclass" readonly/><br>
+
+            <label for="FPPCA">FPPCA Charges : </label>
+            <input id="FPPCA" class="inputclass" readonly/><br>
+
+            <label for="Energy">Energy Charges : </label>
+            <input id="Energy" class="inputclass" readonly/><br>
+
+            <label for="bill">Billable Amount : </label>
+            <input id="bill" class="inputclass" readonly/><br>
+
+            <label for="Credit">Credit : </label>
+            <input id="Credit" class="inputclass" readonly/><br>
+
+            <label for="Interest">Interest : </label>
+            <input id="Interest" class="inputclass" readonly/><br>
+
+            <label for="Total">Payable Amount : </label>
+            <input id="Total" class="inputclass" readonly/><br>
+
+            <label for="Paid">Payment Status : </label>
+            <input id="Paid" class="inputclass" readonly/>
+          </div>
+          <div class="paybox">
+            <button onclick=pay(event)>PAY NOW</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

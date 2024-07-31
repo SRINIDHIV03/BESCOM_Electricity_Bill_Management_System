@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User | View Bill</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav class="head">
+          <div class="lefthead">
+            <img src="../../bescom.jpg" alt="" srcset="" />
+            BESCOM
+          </div>
+          <div class="righthead">
+            <ul>
+              <li><a onclick=Hello()>Profile</a></li>
+              <li><a href="../Billpage/index.html">View Bill</a></li>
+              <li><a onclick=Logout()>Logout</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="profile">
+          <div class="heading">Your Profile</div>
+          <div class="pcont">
+            <div class="pcontleft">
+                <br>
+                <p id="accid">
+                    Account ID:
+                </p><br>
+                <p id="name">Name:</p><br>
+                <p id="addr">Address:</p><br>
+                <p id="rcode">Region Code:</p>
+              </div>
+              <div class="pcontright">
+                <br>
+                <p id="TID">Tariff ID: </p><br>
+                <p id="SID">Scheme ID: </p><br>
+                <p id="CStatus">Connection Status: </p><br>
+                <p id="Mread">Previous Meter Reading: </p><br>
+              </div>
+          </div>
+        </div>
+        <!-- <button><a onclick=password_change()>Change Password</a></button> -->
+        <div bank_manage>
+          <button id="pass_change" class="change"><a onclick=password_change()>Change Password</a></button>
+          <button class="change"><a onclick=add_bank() >Add Bank Details</a></button>
+          <button class="change"><a onclick=remove_bank()>Remove Bank Details</a></button>         
+          <!-- <button><a onclick=toggle_autodebit()>Toggle Autodebit</a></button>   -->
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+</head>
+<body>
+    <h1>Page 1</h1>
+    
+    <label for="username">Enter your username:</label>
+    <input type="text" id="username" required>
+    
+    <button onclick="saveUsername()">Next</button>
+
+    <script>
+        function saveUsername() {
+            // Get the username from the input field
+            var username = document.getElementById('username').value;
+
+            // Save the username to local storage
+            localStorage.setItem('username', username);
+
+            // Redirect to page2.html
+            window.location.href = '../hello.html';
+        }
+    </script>
+</body>
+</html>

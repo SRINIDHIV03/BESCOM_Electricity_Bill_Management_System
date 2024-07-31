@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | BESCOM</title>
+    <style>
+      #schemeForm{
+        font-size: 25px;
+      }
+  </style>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav class="head">
+          <div class="lefthead">
+            <img src="../bescom.jpg" alt="" srcset="" />
+            BESCOM - Administrator
+          </div>
+          <div class="righthead">
+            <ul>
+              <li style="font-size: 20px">
+                Return to <a href="../Home Page/index.html"> Home</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="main">
+        <div class="mainleft">
+          <div class="leftcontent">
+            <div class="info-box" id="superadmin-info">
+              <h2>Head Office</h2>
+              <p id="superadminofficeLocation">Office Location:</p>
+              <p id="superadminPhone">Contact Details: </p>
+          </div>            
+
+          <div class="regionoffice">
+              <form id="schemeForm" onsubmit="submitForm(); return false;">
+                <label for="dropdown">Select a region :</label>
+                <select id="dropdown">
+                    <option value="apple">Apple</option>
+                    <option value="banana">Banana</option>
+                    <option value="orange">Orange</option>
+                    <option value="grape">Grape</option>
+                    <option value="strawberry">Strawberry</option>
+                </select>
+                <br>
+                <button type="submit" class="search">Search</button>
+            </form>
+            <br>
+            <div class="info-box" id="admin-info">
+              <h2>Admin Information</h3>
+              <p id="officeLocation">Office Location: </p>
+              <p id="adminName">Admin Name: </p>
+              <p id="adminPhone">Admin Phone No: </p>
+          </div>            
+            </div>
+          </div>
+        </div>
+        <div class="mainright">
+          <img src="../bulb.png" alt="" />
+        </div>
+      </div>
+      <footer class="footer">
+        <p></p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

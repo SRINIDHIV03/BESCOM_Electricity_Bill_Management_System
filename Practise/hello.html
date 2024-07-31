@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        .wider-row {
+            width: 30%; /* Adjust the width as needed */
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .modify-container{
+            margin-left:60%;
+        }
+        button{
+            padding-left: 5%;
+            padding-right: 5%;
+            margin: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div class="modify-container">
+        <form id="dynamicForm">
+            <label for="upperLimit">Upper Limit:</label>
+            <input type="number" id="upperLimit" name="upperLimit" required>
+
+            <label for="charge">Charge:</label>
+            <input type="number" id="charge" name="charge" required><br>
+
+            <button type="button" onclick="addRow()">Push Slab</button>
+            <button type="button" onclick="deleteBottomRow()">Pop Slab</button>
+            <br>
+            <table id="chargeTable">
+                <thead>
+                    <tr>
+                        <th class="wider-row">Lower Limit</th>
+                        <th class="wider-row">Upper Limit</th>
+                        <th>Charge</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </form>
+    </div>    
+<script>
+    var len=0;
+    function addRow() {
+        
+        var table = document.getElementById('chargeTable').getElementsByTagName('tbody')[0];
+
+        var upperLimit = document.getElementById('upperLimit').value;
+        var charge = document.getElementById('charge').value;
+        
+//        var previousRow =(len==0) ? null: table.rows[table.rows.length - 1];
+        var lowerLimit = (len==0) ? 0: table.rows[len-1].cells[1].innerHTML ;
+        
+        console.log(lowerLimit);
+        console.log(upperLimit);
+        if(lowerLimit>=upperLimit)   //previous row upper limit MUST BE lower limit of next row
+            return;
+
+        // var table = document.getElementById('chargeTable').getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow(table.rows.length);
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+        var cell4 = newRow.insertCell(3);
+
+        // // Automatically set lower limit of the next row to be equal to the upper limit of the previous row
+        // var previousRow = table.rows[table.rows.length - 2];
+        // var lowerLimit = previousRow ? previousRow.cells[1].innerHTML : 0;
+
+        cell1.innerHTML = lowerLimit;
+        cell2.innerHTML = upperLimit;
+        cell3.innerHTML = charge;
+        cell4.innerHTML = '<button onclick="modifyCharge(event)">Modify</button>';
+        len++;
+    }
+
+    function deleteBottomRow() {
+        var table = document.getElementById('chargeTable').getElementsByTagName('tbody')[0];
+        var lastRowIndex = len-1;
+        if (lastRowIndex >= 0) {
+            table.deleteRow(lastRowIndex);
+            len--;
+        }        
+    }
+
+    function modifyCharge(event) {
+        event.preventDefault();
+        var button = event.target;
+        var row = button.parentNode.parentNode;
+        console.log(row.cells[0].innerHTML);
+        console.log(row.cells[2].innerHTML);
+
+       var charge = prompt('Enter the new charge:');
+       row.cells[2].innerHTML = charge;
+    }
+</script>
+
+</body>
+</html>

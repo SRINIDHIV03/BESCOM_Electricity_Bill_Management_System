@@ -1,0 +1,275 @@
+@keyframes slide-in-top {
+    0% {
+      transform: translateY(-200px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .button2 {
+    position: relative;
+    font-size: 12.1px;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    font-family: "DM Sans";
+    color: #fff;
+    text-align: center;
+  }
+  .button,
+  .button1 {
+    position: absolute;
+    bottom: 0;
+    height: 46.5px;
+    cursor: pointer;
+  }
+  .button1 {
+    border: 0;
+    padding: 8.61111068725586px 6.888888835906982px;
+    background-color: #4318ff;
+    width: 100%;
+    right: 0;
+    left: 0;
+    border-radius: 13.78px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .button {
+    width: calc(100% - 165.4px);
+    right: 102.9px;
+    left: 62.5px;
+  }
+  .large-input,
+  .password2 {
+    font-family: "DM Sans";
+    font-size: 12.1px;
+    position: absolute;
+    left: 0;
+  }
+  .password2 {
+    cursor: pointer;
+    top: 0;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    font-weight: 500;
+    color: #2b3674;
+    text-align: left;
+  }
+  .large-input {
+    border: 0.9px solid #e0e5f2;
+    outline: 0;
+    background-color: transparent;
+    top: 23.3px;
+    border-radius: 13.78px;
+    box-sizing: border-box;
+    width: 353.1px;
+    height: 43.1px;
+    padding: 14.600000000000136px 20.59999999999991px 16.499999999999886px;
+    color: #a3aed0;
+  }
+  .vector-icon {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .remove-red-eye,
+  .vector-icon,
+  .vector-icon1 {
+    position: absolute;
+    overflow: hidden;
+  }
+  .vector-icon1 {
+    height: 62.79%;
+    width: 91.86%;
+    top: 18.6%;
+    right: 4.07%;
+    bottom: 18.6%;
+    left: 4.07%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .remove-red-eye {
+    top: 37.9px;
+    left: 320.3px;
+    width: 17.2px;
+    height: 17.2px;
+  }
+  .password1 {
+    position: absolute;
+    top: 87px;
+    left: 0;
+    width: 353.1px;
+    height: 66.3px;
+  }
+  .admin-id1 {
+    color: #2b3674;
+  }
+  .span {
+    color: #4318ff;
+  }
+  .admin-id,
+  .large-input1 {
+    font-family: "DM Sans";
+    font-size: 12.1px;
+  }
+  .admin-id {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    font-weight: 500;
+    text-align: left;
+  }
+  .large-input1 {
+    border: 0.9px solid #e0e2e7;
+    outline: 0;
+    background-color: transparent;
+    top: 23.2px;
+    border-radius: 13.78px;
+    box-sizing: border-box;
+    width: 353.1px;
+    height: 43.1px;
+    padding: 14.600000000000136px 20.59999999999991px 16.499999999999773px;
+    color: #a3aed0;
+  }
+  .email4,
+  .form1,
+  .large-input1 {
+    position: absolute;
+    left: 0;
+  }
+  .email4 {
+    top: 0;
+    width: 353.1px;
+    height: 66.3px;
+  }
+  .form1 {
+    margin: 0;
+    width: calc(100% - 0.4px);
+    right: 0.4px;
+    bottom: 0.1px;
+    height: 227.1px;
+  }
+  .please-login-only,
+  .title {
+    position: absolute;
+    letter-spacing: -0.02em;
+  }
+  .title {
+    top: 0;
+    left: 0;
+    line-height: 48.22px;
+    font-weight: 700;
+  }
+  .please-login-only {
+    top: 55.6px;
+    left: 1.2px;
+    font-size: 13.8px;
+    line-height: 100%;
+    color: #a3aed0;
+    display: inline-block;
+    width: 347px;
+  }
+  .form,
+  .header {
+    position: absolute;
+  }
+  .header {
+    top: 0;
+    left: 5.4px;
+    width: 348.2px;
+    height: 69.6px;
+  }
+  .form {
+    width: calc(100% - 1134.5px);
+    right: 874.6px;
+    bottom: 129.5px;
+    left: 259.9px;
+    height: 337.1px;
+    opacity: 0;
+  }
+  .form.animate {
+    animation: 1s ease 0s 1 normal forwards slide-in-top;
+  }
+  .image-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 685px;
+    height: 759.4px;
+  }
+  .bescom {
+    line-height: 100%;
+    display: inline-block;
+  }
+  .bescom,
+  .logo1,
+  .text2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 342.5px;
+    height: 94.8px;
+  }
+  .logo1 {
+    top: 343px;
+    left: 224px;
+  }
+  .pngtreebulb-icon-vector-bulb1 {
+    position: absolute;
+    height: 12.57%;
+    width: 27.93%;
+    top: 32.54%;
+    right: 35.9%;
+    bottom: 54.89%;
+    left: 36.18%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .image {
+    position: absolute;
+    top: -0.1px;
+    left: 803.4px;
+    width: 685px;
+    height: 700px;
+    font-size: 57.1px;
+    color: #b3b8fa;
+    font-family: Poppins;
+  }
+  .darklight-icon {
+    position: absolute;
+    top: 914.5px;
+    left: 1575.8px;
+    width: 51.7px;
+    height: 51.7px;
+  }
+  .login {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    height: 700px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 31px;
+    color: #2b3674;
+    font-family: "DM Sans";
+  }
+.image{
+    background-color: #4318ff;
+    border-bottom-left-radius: 200px;
+}  
